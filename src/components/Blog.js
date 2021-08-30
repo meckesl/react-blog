@@ -16,6 +16,8 @@ import post1 from './blog-post.1.md';
 import post2 from './blog-post.2.md';
 import post3 from './blog-post.3.md';
 
+import HotelStackGrid from './HotelStackGrid';
+
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
@@ -103,9 +105,13 @@ export default function Blog() {
             {featuredPosts.map((post) => (
               <FeaturedPost key={post.title} post={post} />
             ))}
+
+
+
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
             <Main title="From the firehose" posts={posts} />
+            <HotelStackGrid/>
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}
@@ -113,6 +119,8 @@ export default function Blog() {
               social={sidebar.social}
             />
           </Grid>
+
+
         </main>
       </Container>
       <Footer title="Footer" description="Something here to give the footer a purpose!" />
